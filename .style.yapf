@@ -1,0 +1,6 @@
+# Source
+# https://github.com/google/yapf#formatting-style 
+[style]
+column_limit = 120
+based_on_style = chromium
+
