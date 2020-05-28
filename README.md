@@ -1,6 +1,3 @@
-selenium_skeleton
-------
-
 # Setup Instructions
 Using python3 install the `requirements-to-freeze.txt` file:
 ```bash

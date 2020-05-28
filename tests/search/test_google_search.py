@@ -1,18 +1,18 @@
 import pytest
 
-from app_data.selectors.google_selectors import INPUT_FIELD, NAVIGATION_PAGES, RESULT_STATS
+from app_data.selectors.search import INPUT_FIELD, NAVIGATION_PAGES, RESULT_STATS
 from helpers import dom, wait
 
 
 URL = {
     'link': 'https://www.google.com/',
-    'title': 'Google'
+    'title': 'search'
 }
 
 
 @pytest.mark.smoke
 @pytest.mark.usefixtures("open_url")
-def test_search(selenium):
+def test_google_search(selenium):
     """
     This test validates:
         1. search page loads after entering search
