@@ -1,0 +1,1 @@
+This directory contains variable definitions that allow tests to be more readable and concise to testreaders. 
