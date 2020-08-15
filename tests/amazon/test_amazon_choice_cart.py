@@ -26,6 +26,4 @@ def test_amazon_search_summary(selenium, search_term):
 
     # verify added item in cart
     go_to_cart(selenium)
-
-    # verify added item is in cart
     verify_items_in_cart(selenium, product_name)
