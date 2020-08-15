@@ -6,6 +6,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
 # set timeout
+from helpers.exceptions import WebException
+
 DEFAULT_TIMEOUT = 60
 
 
@@ -210,16 +212,3 @@ class ElementCriteriaCondition(object):
 
         except (StaleElementReferenceException, WebDriverException, StopIteration):
             return False
-
-
-class WebException(Exception):
-    """
-    Custom exception for this web test framework
-    """
-
-    def __init__(self, msg):
-        self.msg = msg
-
-    def __str__(self):
-        return repr(self.msg)
-

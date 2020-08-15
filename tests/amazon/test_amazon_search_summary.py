@@ -12,7 +12,7 @@ URL = {
 
 @pytest.mark.smoke
 @pytest.mark.usefixtures("open_url")
-@pytest.mark.parametrize("search_term", ("gardening tools", "plush animals", "pots"))
+@pytest.mark.parametrize("search_term", ("gardening tools", "plush animals", "pots",))
 def test_amazon_search_summary(selenium, search_term):
     """
     This test validates the expected summary of a search is shown on the first and second search results page.
@@ -21,7 +21,7 @@ def test_amazon_search_summary(selenium, search_term):
     # search for results
     do_search(selenium, search_term)
     # verify results shown for search
-    verify_search_result_summary(selenium, expected_prefix='1-48 of over', expected_suffix=search_term)
+    verify_search_result_summary(selenium, low=1, high=48, expected_search_term=search_term)
 
     dom.click_element(selenium, NEXT_BUTTON)
-    verify_search_result_summary(selenium, expected_prefix='49-96 of over', expected_suffix=search_term)
+    verify_search_result_summary(selenium, low=49, high=96, expected_search_term=search_term)
